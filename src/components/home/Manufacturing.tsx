@@ -122,18 +122,22 @@ function ProductCard({ product }: { product: Product }) {
     <article className="group relative flex flex-col justify-between rounded-2xl bg-white/90 backdrop-blur-sm shadow-2xl transition hover:shadow-lg">
       {product.icon && (
         <div className="flex justify-center bg-[rgba(0,86,166,0.05)] p-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-lg  bg-white/70 text-[rgba(0,86,166,1)]">
+          <div
+            className="flex h-12 w-12 items-center justify-center rounded-lg bg-white/70 text-[rgba(0,86,166,1)] transition-colors duration-300 group-hover:text-orange-500"
+          >
             {product.icon}
           </div>
         </div>
       )}
       {/* Body */}
       <div className="flex flex-col gap-2 p-5">
-        <h3 className="text-base font-semibold leading-snug text-zinc-900">
+        <h3 className="text-base font-semibold leading-snug text-orange-500">
           {product.name}
         </h3>
         {product.blurb && (
-          <p className="text-sm leading-relaxed text-zinc-700">{product.blurb}</p>
+          <p className="text-sm leading-relaxed text-zinc-700">
+            {product.blurb}
+          </p>
         )}
       </div>
     </article>

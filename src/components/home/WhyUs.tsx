@@ -104,7 +104,7 @@ export default function WhyUs({
               {/* Icon */}
               <div
                 className={`mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl ${
-                  isBlue ? "bg-white/20 text-white" : "bg-[rgba(0,86,166,0.10)] text-[rgba(0,86,166,1)]"
+                  isBlue ? "bg-white/20 text-orange-300" : "bg-[rgba(0,86,166,0.10)] text-[rgba(0,86,166,1)]"
                 }`}
                 aria-hidden
               >

@@ -15,6 +15,7 @@ const images = [
 ];
 
 const BLUE = "#0056A6";
+const ORANGE = "#FF7A1A";
 
 const HeroCarousel = () => {
 	const settings = {
@@ -52,13 +53,15 @@ const HeroCarousel = () => {
 							sizes="100vw"
 							className="object-cover"
 						/>
-						{/* Vignette + blue legibility layer (keeps image visible, text crisp) */}
+						{/* Vignette + brand overlay */}
 						<div
 							aria-hidden
 							className="absolute inset-0"
 							style={{
-								background:
-									"radial-gradient(120% 120% at 20% 35%, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0.06) 75%, rgba(0,0,0,0) 100%), linear-gradient(90deg, rgba(0,86,166,0.18) 0%, rgba(0,86,166,0.06) 55%, rgba(0,86,166,0.02) 100%)",
+								background: `
+                  radial-gradient(120% 120% at 20% 35%, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0.06) 75%, rgba(0,0,0,0) 100%),
+                  linear-gradient(90deg, rgba(0,86,166,0.28) 0%, rgba(255,122,26,0.25) 55%, rgba(0,86,166,0.18) 100%)
+                `,
 							}}
 						/>
 					</div>
@@ -74,14 +77,18 @@ const HeroCarousel = () => {
 				className="absolute left-4 right-4 top-[46%] sm:left-8 md:left-14 lg:left-24">
 				<div className="max-w-3xl p-3 sm:p-5 md:p-8">
 					<h1 className="text-white font-extrabold tracking-tight leading-tight text-2xl sm:text-3xl md:text-5xl">
-						Arihant <span style={{ color: BLUE }}>Control Systems</span>
+						Arihant <span style={{ color: BLUE }}>Control</span>{" "}
+						<span >Systems</span>
 					</h1>
 					<p className="mt-3 text-white/95 text-sm sm:text-base md:text-lg max-w-2xl">
-						Electrical panels & contracting - reliable, safe, and engineered for
-						performance.
+						High-Grade Electrical Panels & Contracting –{" "}
+						<span  className="font-semibold">
+							Class 1/A Certified
+						</span>{" "}
+						for Safety, Reliability, and Peak Performance
 					</p>
 
-					{/* Quick product chips for scan-ability */}
+					{/* Product chips */}
 					<div className="mt-4 flex flex-wrap gap-2">
 						{[
 							"MCC",
@@ -91,10 +98,15 @@ const HeroCarousel = () => {
 							"DG Control",
 							"Bus Ducts",
 							"Distribution Boards",
-						].map((t) => (
+						].map((t, i) => (
 							<span
 								key={t}
-								className="inline-flex items-center rounded-full border border-zinc-200/70 bg-white/95 backdrop-blur px-3 py-1 text-xs font-medium text-zinc-700">
+								className="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium"
+								style={{
+									border: `1px solid ${i % 2 === 0 ? BLUE : ORANGE}`,
+									backgroundColor: "rgba(255,255,255,0.9)",
+									color: i % 2 === 0 ? BLUE : ORANGE,
+								}}>
 								{t}
 							</span>
 						))}
@@ -110,14 +122,13 @@ const HeroCarousel = () => {
 						</Link>
 						<Link
 							href="/contact"
-							className="inline-flex items-center justify-center rounded-md border px-5 py-2.5 text-sm font-semibold text-zinc-900 border-zinc-300 hover:bg-zinc-50">
+							className="inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold text-white transition hover:opacity-95"
+							style={{ backgroundColor: ORANGE }}>
 							Contact Us
 						</Link>
 					</div>
 				</div>
 			</motion.div>
-
-			{/* Removed custom slick dot styling so defaults apply */}
 		</section>
 	);
 };

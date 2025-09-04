@@ -3,7 +3,7 @@
 import React, { useRef, useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-const BLUE = "#0056a6";
+const ORANGE = "#ff6600";
 
 type Project = {
 	name: string;
@@ -79,7 +79,7 @@ export default function MajorProjects({
 				<div className="mb-6 flex flex-col gap-2">
 					<span
 						className="inline-flex w-fit items-center rounded-full px-3 py-1 text-xs font-semibold"
-						style={{ backgroundColor: "#e8f1fb", color: BLUE }}>
+						style={{ backgroundColor: "#fff3e6", color: ORANGE }}>
 						{title.toUpperCase()}
 					</span>
 					<h2
@@ -113,8 +113,6 @@ function ProjectsGrid({ projects }: { projects: Project[] }) {
 		</div>
 	);
 }
-
-/* --------------------------- CAROUSEL LAYOUT --------------------------- */
 
 function ProjectsCarousel({ projects }: { projects: Project[] }) {
 	const trackRef = useRef<HTMLDivElement | null>(null);
@@ -190,7 +188,7 @@ function ProjectsCarousel({ projects }: { projects: Project[] }) {
 						onClick={() => scrollToIndex(i)}
 						className="h-2.5 w-2.5 rounded-full border border-zinc-300 transition"
 						style={{
-							backgroundColor: i === index ? BLUE : "white",
+							backgroundColor: i === index ? ORANGE : "white",
 						}}
 					/>
 				))}
@@ -217,7 +215,7 @@ function ProjectCard({ project }: { project: Project }) {
 			{/* Caption */}
 			<div className="flex items-center justify-between gap-3 px-4 py-3">
 				<div className="min-w-0">
-					<h3 className="truncate text-sm font-semibold text-zinc-900">
+					<h3 className="truncate text-sm font-semibold text-orange-500">
 						{project.name}
 					</h3>
 					<p className="truncate text-xs text-zinc-600">
@@ -234,7 +232,7 @@ function ProjectCard({ project }: { project: Project }) {
 			{/* Accent bar */}
 			<div
 				className="h-0.5 w-full"
-				style={{ background: `linear-gradient(90deg, ${BLUE}, #003d78)` }}
+				style={{ background: `linear-gradient(90deg, ${ORANGE}, #cc5200)` }}
 			/>
 		</article>
 	);
