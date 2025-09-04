@@ -1,13 +1,13 @@
 "use client";
 
-import Link from "next/link";
+import React from "react";
 
 const BLUE = "#0056A6";
 
 type Product = {
   name: string;
   slug: string;
-  icon?: JSX.Element;
+  icon?: React.ReactNode;
   blurb?: string;
 };
 
