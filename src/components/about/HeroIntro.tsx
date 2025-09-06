@@ -163,16 +163,16 @@ export default function HeroIntro() {
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <a
-                href="#contact"
+                href="/contact"
                 className="inline-flex items-center justify-center rounded-xl bg-[#FF7D28] px-5 py-3 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-orange-500/60 transition hover:brightness-[0.96] active:translate-y-[1px]"
               >
                 Get a Quote
               </a>
               <a
-                href="#solutions"
+                href="/services"
                 className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white/90 backdrop-blur-sm transition hover:bg-white/10"
               >
-                Our Solutions
+                Our Services
               </a>
             </div>
 

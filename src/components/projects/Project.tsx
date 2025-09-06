@@ -1,5 +1,6 @@
 "use client";
 
+import { section } from "framer-motion/client";
 import { useMemo, useState } from "react";
 
 export default function ProjectReferencesReadable() {
@@ -11,6 +12,7 @@ export default function ProjectReferencesReadable() {
 		scope: string;
 		href: string;
 		img: string;
+		sector: string; // Added sector
 	};
 
 	type Region = {
@@ -35,6 +37,7 @@ export default function ProjectReferencesReadable() {
 						"33KV Switchyard, 33KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/quartzkraft-llp-ongole",
 					img: placeholderA,
+					sector: "Industrial",
 				},
 				{
 					name: "Ravileela Granite Ltd",
@@ -42,6 +45,7 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/ravileela-granite-ongole",
 					img: placeholderB,
+					sector: "Industrial",
 				},
 				{
 					name: "Midwest Granite Ltd",
@@ -49,6 +53,7 @@ export default function ProjectReferencesReadable() {
 						"33KV Switchyard, 33KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/midwest-granite-ongole",
 					img: placeholderC,
+					sector: "Industrial",
 				},
 				{
 					name: "Aequitas eStones Pvt Ltd",
@@ -56,6 +61,7 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/aequitas-estones-ongole",
 					img: placeholderA,
+					sector: "Industrial",
 				},
 				{
 					name: "Anjalee Granite Pvt Ltd",
@@ -63,6 +69,7 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/anjalee-granite-ongole",
 					img: placeholderB,
+					sector: "Industrial",
 				},
 			],
 		},
@@ -75,12 +82,14 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/chemic-life-sciences-nalgonda",
 					img: placeholderC,
+					sector: "Industrial",
 				},
 				{
 					name: "Bhaskara Agro Chemicals Pvt Ltd",
 					scope: "11KV Switchyard, LT Panels, Cable Laying, Street Lighting.",
 					href: "/projects/bhaskara-agro-chemicals-nalgonda",
 					img: placeholderA,
+					sector: "Industrial",
 				},
 				{
 					name: "Amsri Chemicals Pvt Ltd (Panthangi)",
@@ -88,6 +97,7 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/amsri-chemicals-panthangi",
 					img: placeholderB,
+					sector: "Industrial",
 				},
 				{
 					name: "Gangothri Fertilizers & Nutrients Pvt Ltd",
@@ -95,12 +105,14 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/gangothri-fertilizers-nalgonda",
 					img: placeholderC,
+					sector: "Industrial",
 				},
 				{
 					name: "Sri Srinivasa Aluminium Industries (Bhongiri)",
 					scope: "LT Panels.",
 					href: "/projects/sri-srinivasa-aluminium-bhongiri",
 					img: placeholderA,
+					sector: "Industrial",
 				},
 			],
 		},
@@ -113,6 +125,7 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/syn-fine-drugs-hyderabad",
 					img: placeholderB,
+					sector: "Industrial",
 				},
 				{
 					name: "Novus Green Energy (Shadnagar)",
@@ -120,12 +133,14 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/novus-green-energy-shadnagar",
 					img: placeholderC,
+					sector: "Energy",
 				},
 				{
 					name: "Emory Hospital (Attapur, Medhipatnam)",
 					scope: "11KV Switchyard, LT Panels, Cable Laying, Street Lighting.",
 					href: "/projects/emory-hospital-attapur",
 					img: placeholderA,
+					sector: "Hospital",
 				},
 				{
 					name: "Posh Chemicals Pvt Ltd",
@@ -133,6 +148,7 @@ export default function ProjectReferencesReadable() {
 						"33KV Switchyard, 33KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/posh-chemicals-hyderabad",
 					img: placeholderB,
+					sector: "Industrial",
 				},
 				{
 					name: "Supermax Personal Care Ltd",
@@ -140,18 +156,21 @@ export default function ProjectReferencesReadable() {
 						"33KV Switchyard, 33KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/supermax-personal-care-hyderabad",
 					img: placeholderC,
+					sector: "Industrial",
 				},
 				{
 					name: "Gayatri Projects Ltd",
 					scope: "LT Panels.",
 					href: "/projects/gayatri-projects-hyderabad",
 					img: placeholderA,
+					sector: "Industrial",
 				},
 				{
 					name: "Hyderabad Batteries Pvt Ltd",
 					scope: "LT Panels.",
 					href: "/projects/hyderabad-batteries",
 					img: placeholderB,
+					sector: "Industrial",
 				},
 				{
 					name: "Sonali Casting Pvt Ltd",
@@ -159,6 +178,7 @@ export default function ProjectReferencesReadable() {
 						"33KV Switchyard, 33KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/sonali-casting-hyderabad",
 					img: placeholderC,
+					sector: "Industrial",
 				},
 				{
 					name: "Vishwanath Projects Ltd",
@@ -166,12 +186,14 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/vishwanath-projects-hyderabad",
 					img: placeholderA,
+					sector: "Industrial",
 				},
 				{
 					name: "Vasanta Chemicals Pvt Ltd",
 					scope: "LT Panels.",
 					href: "/projects/vasanta-chemicals-hyderabad",
 					img: placeholderB,
+					sector: "Industrial",
 				},
 			],
 		},
@@ -184,6 +206,7 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/midwest-granite-warangal",
 					img: placeholderC,
+					sector: "Industrial",
 				},
 				{
 					name: "Midwest Granite Ltd (Kodad)",
@@ -191,6 +214,7 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/midwest-granite-kodad",
 					img: placeholderA,
+					sector: "Industrial",
 				},
 			],
 		},
@@ -203,6 +227,7 @@ export default function ProjectReferencesReadable() {
 						"33KV Switchyard, 33KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/parle-agro-pashmylaram",
 					img: placeholderB,
+					sector: "Industrial",
 				},
 				{
 					name: "Shri Hari Ferro Alloys Pvt Ltd (Chegunta)",
@@ -210,6 +235,7 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/shri-hari-ferro-alloys-chegunta",
 					img: placeholderC,
+					sector: "Industrial",
 				},
 				{
 					name: "Arch Pharmalaborities Pvt Ltd",
@@ -217,6 +243,7 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/arch-pharmalaborities-medak",
 					img: placeholderA,
+					sector: "Industrial",
 				},
 				{
 					name: "Chalimedia Feeds Pvt Ltd (Karimnagar)",
@@ -224,6 +251,7 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/chalimedia-feeds-karimnagar",
 					img: placeholderB,
+					sector: "Industrial",
 				},
 			],
 		},
@@ -236,6 +264,7 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/satya-exports-unit-2-ongole",
 					img: placeholderC,
+					sector: "Industrial",
 				},
 				{
 					name: "Satya Stone Pvt Ltd Unit-III (Ongole)",
@@ -243,6 +272,7 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/satya-stone-unit-3-ongole",
 					img: placeholderA,
+					sector: "Industrial",
 				},
 				{
 					name: "Siva Stone Pvt Ltd (Ongole)",
@@ -250,6 +280,7 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/siva-stone-ongole",
 					img: placeholderB,
+					sector: "Industrial",
 				},
 				{
 					name: "Aequitas Exports Pvt Ltd (Ongole)",
@@ -257,6 +288,7 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/aequitas-exports-ongole",
 					img: placeholderC,
+					sector: "Industrial",
 				},
 			],
 		},
@@ -268,24 +300,28 @@ export default function ProjectReferencesReadable() {
 					scope: "11KV Switchyards, LT Panels, Cable Laying, Street Lighting.",
 					href: "/projects/ap-sphc-srikakulam",
 					img: placeholderA,
+					sector: "Government",
 				},
 				{
 					name: "APSPHC Ltd (APPA, Gandipet, Hyderabad)",
 					scope: "11KV Switchyards, LT Panels, Cable Laying, Street Lighting.",
 					href: "/projects/ap-sphc-appa-gandipet",
 					img: placeholderB,
+					sector: "Government",
 				},
 				{
 					name: "APSPHC Ltd (IPS Quarters, Yousufguda, Hyderabad)",
 					scope: "11KV Switchyards, LT Panels, Cable Laying, Street Lighting.",
 					href: "/projects/ap-sphc-ips-yousufguda",
 					img: placeholderC,
+					sector: "Government",
 				},
 				{
 					name: "APSPHC Ltd (CM Camp Office, Hyderabad)",
 					scope: "11KV Switchyard, LT Panels, Cable Laying, Street Lighting.",
 					href: "/projects/ap-sphc-cm-camp-office",
 					img: placeholderA,
+					sector: "Government",
 				},
 			],
 		},
@@ -298,6 +334,7 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/maheshwari-fertilizers-dhamancharla",
 					img: placeholderB,
+					sector: "Industrial",
 				},
 				{
 					name: "Kooshi Fertilizers Pvt Ltd (Tirupathi)",
@@ -305,6 +342,7 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/kooshi-fertilizers-tirupathi",
 					img: placeholderC,
+					sector: "Industrial",
 				},
 				{
 					name: "Haritha Fertilizers Pvt Ltd (Keesara)",
@@ -312,6 +350,7 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/haritha-fertilizers-keesara",
 					img: placeholderA,
+					sector: "Industrial",
 				},
 			],
 		},
@@ -324,12 +363,14 @@ export default function ProjectReferencesReadable() {
 						"LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/100-bed-mch-koppal",
 					img: placeholderB,
+					sector: "Hospital",
 				},
 				{
 					name: "G P Birla Observatory & Astronomical Research Centre (Hyderabad)",
 					scope: "LT Distribution Panel, Bus Duct.",
 					href: "/projects/gp-birla-observatory-hyd",
 					img: placeholderC,
+					sector: "Institution",
 				},
 				{
 					name: "Horticulture University (Mulugu, Telangana)",
@@ -337,6 +378,7 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/horticulture-university-mulugu",
 					img: placeholderA,
+					sector: "Institution",
 				},
 			],
 		},
@@ -348,6 +390,7 @@ export default function ProjectReferencesReadable() {
 					scope: "LT Panels, Bus Duct.",
 					href: "/projects/granite-mart-keesaragutta",
 					img: placeholderB,
+					sector: "Industrial",
 				},
 				{
 					name: "Sri Srinivasa Metal Industries (Keesara)",
@@ -355,6 +398,7 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/sri-srinivasa-metal-industries-keesara",
 					img: placeholderC,
+					sector: "Industrial",
 				},
 				{
 					name: "Godavari Form Chemicals Pvt Ltd (Thallada, Khammam Dist.)",
@@ -362,6 +406,7 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/godavari-form-chemicals-thallada",
 					img: placeholderA,
+					sector: "Industrial",
 				},
 				{
 					name: "Vijaylakshmi Spintex Ltd (Bibinagar, Nalgonda)",
@@ -369,6 +414,7 @@ export default function ProjectReferencesReadable() {
 						"33KV Switchyard, 33KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/vijaylakshmi-spintex-bibinagar",
 					img: placeholderB,
+					sector: "Industrial",
 				},
 				{
 					name: "Satwik Drugs Pvt Ltd (Kohlar, Karnataka)",
@@ -376,218 +422,160 @@ export default function ProjectReferencesReadable() {
 						"11KV Switchyard, 11KV Line, HT Panels, Bus Duct, LT Panels, Cable Laying, Cable Terminations, Shed Lighting, Street Lights, Earthing and Liaisoning.",
 					href: "/projects/satwik-drugs-kohlar",
 					img: placeholderC,
+					sector: "Industrial",
 				},
 				{
 					name: "Laser Events Pvt Ltd (Bangalore)",
 					scope: "LT Panels.",
 					href: "/projects/laser-events-bangalore",
 					img: placeholderA,
+					sector: "Others",
 				},
 				{
 					name: "Serwel Electronics Ltd (Pashmylaram, Medak Dist.)",
 					scope: "LT Panels.",
 					href: "/projects/serwel-electronics-pashmylaram",
 					img: placeholderB,
+					sector: "Others",
 				},
 			],
 		},
 	];
 
-	// ---------- UI Helpers ----------
-	const [q, setQ] = useState("");
+	const [regionFilter, setRegionFilter] = useState<string>("All");
+	const [sectorFilter, setSectorFilter] = useState<string>("All");
+	const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+	const [selectedRegion, setSelectedRegion] = useState<string>("");
 
-	const filtered = useMemo(() => {
-		const term = q.trim().toLowerCase();
-		if (!term) return regions;
-		return regions
-			.map((r) => ({
-				...r,
-				projects: r.projects.filter(
-					(p) =>
-						p.name.toLowerCase().includes(term) ||
-						p.scope.toLowerCase().includes(term) ||
-						r.title.toLowerCase().includes(term)
-				),
-			}))
-			.filter((r) => r.projects.length > 0);
-	}, [q, regions]);
+	const allRegions = useMemo(() => ["All", ...regions.map((r) => r.title)], []);
+	const allSectors = useMemo(() => {
+		const sectors = new Set<string>();
+		regions.forEach((r) => r.projects.forEach((p) => sectors.add(p.sector)));
+		return ["All", ...Array.from(sectors)];
+	}, []);
 
-	const anchors = useMemo(
-		() =>
-			regions.map((r) => ({
-				id: r.title
-					.toLowerCase()
-					.replace(/[^a-z0-9]+/g, "-")
-					.replace(/(^-|-$)/g, ""),
-				title: r.title,
-			})),
-		[regions]
-	);
+	const filteredProjects = useMemo(() => {
+		const list: { project: Project; region: string }[] = [];
+		regions.forEach((r) => {
+			r.projects.forEach((p) => list.push({ project: p, region: r.title }));
+		});
 
-	// ---------- Render ----------
+		return list.filter(({ project, region }) => {
+			const matchRegion = regionFilter === "All" || region === regionFilter;
+			const matchSector =
+				sectorFilter === "All" || project.sector === sectorFilter;
+			return matchRegion && matchSector;
+		});
+	}, [regionFilter, sectorFilter, regions]);
+
 	return (
-		<section className="relative bg-white py-16 sm:py-20 lg:py-24">
-			<div className="mx-auto max-w-7xl px-6">
-				{/* Header */}
-				<div className="text-center">
-					<h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">
+		<section className="bg-white py-16 sm:py-20 lg:py-24">
+			<div className="mx-auto max-w-6xl px-6">
+				{/* Title */}
+				<div className="text-center mb-10">
+					<h2 className="text-3xl font-bold sm:text-4xl">
 						Project <span style={{ color: ORANGE }}>References</span>
 					</h2>
-					<p className="mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-gray-600 sm:text-base">
-						A snapshot of our on‑ground delivery across Telangana, Andhra
-						Pradesh, Karnataka and beyond.
+					<p className="mt-2 text-gray-600">
+						Browse projects by region and sector. Click a project name to view
+						details.
 					</p>
 				</div>
 
-				{/* Quick nav + Search */}
-				<div className="mt-6 flex flex-col gap-4 lg:mt-8 lg:flex-row lg:items-center lg:justify-between">
-					{/* Region pills (horizontal scroll) */}
-					<div className="-mx-2 overflow-x-auto pb-2">
-						<div className="flex gap-2 px-2">
-							{anchors.map((a, i) => (
-								<a
-									key={a.id}
-									href={`#${a.id}`}
-									className="whitespace-nowrap rounded-full border px-3 py-1 text-xs font-medium text-gray-700 transition hover:bg-gray-50"
-									style={{ borderColor: i % 2 === 0 ? BLUE : ORANGE }}>
-									{a.title}
-								</a>
-							))}
-						</div>
-					</div>
-
-					{/* Search */}
-					<div className="w-full lg:w-80">
-						<label className="sr-only" htmlFor="project-search">
-							Search projects
-						</label>
-						<div className="flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-3 py-2 shadow-sm">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 24 24"
-								fill="currentColor"
-								className="h-5 w-5 text-gray-500">
-								<path
-									fillRule="evenodd"
-									d="M10.5 3.75a6.75 6.75 0 1 0 4.263 11.94l3.274 3.274a.75.75 0 1 0 1.06-1.06l-3.274-3.274A6.75 6.75 0 0 0 10.5 3.75Zm-5.25 6.75a5.25 5.25 0 1 1 10.5 0 5.25 5.25 0 0 1-10.5 0Z"
-									clipRule="evenodd"
-								/>
-							</svg>
-							<input
-								id="project-search"
-								placeholder="Search by name, scope or region..."
-								value={q}
-								onChange={(e) => setQ(e.target.value)}
-								className="w-full border-0 bg-transparent text-sm text-gray-800 placeholder:text-gray-500 focus:outline-none"
-							/>
-						</div>
-					</div>
-				</div>
-
-				{/* Regions */}
-				<div className="mt-10 space-y-12">
-					{filtered.map((region, rIdx) => {
-						const anchorId =
-							anchors[rIdx]?.id ||
-							region.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-						return (
-							<section
-								key={region.title}
-								id={anchorId}
-								className="scroll-mt-24">
-								{/* Region header */}
-								<div className="mb-5 flex items-center justify-between gap-3">
-									<h3 className="text-xl font-semibold text-black sm:text-2xl">
-										{region.title}
-									</h3>
-									<div
-										className="h-1 flex-1 rounded-full"
-										style={{
-											background: `linear-gradient(90deg, ${BLUE}, ${ORANGE})`,
-										}}
-									/>
-								</div>
-
-								{/* Cards */}
-								<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-									{region.projects.map((p, i) => (
-										<article
-											key={`${region.title}-${p.name}`}
-											className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
-											{/* Image */}
-											<div className="relative h-40 w-full overflow-hidden">
-												<img
-													src={p.img}
-													alt={p.name}
-													className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.05]"
-												/>
-												<div
-													aria-hidden
-													className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/35"
-												/>
-												<span
-													className="absolute left-4 right-4 top-0 h-[3px] rounded-b-full"
-													style={{
-														background: `linear-gradient(90deg, ${BLUE} 0%, ${ORANGE} 100%)`,
-													}}
-												/>
-											</div>
-
-											{/* Body */}
-											<div className="p-5">
-												<h4 className="text-base font-semibold text-black sm:text-lg">
-													<a href={p.href} className="hover:underline">
-														{p.name}
-													</a>
-												</h4>
-												{/* Scope as tidy chips (auto-split by commas) */}
-												<ul className="mt-3 flex flex-wrap gap-2">
-													{p.scope.split(",").map((s) => (
-														<li
-															key={s.trim()}
-															className="rounded-full border px-2.5 py-1 text-[11px] font-medium text-gray-700"
-															style={{
-																borderColor: i % 2 === 0 ? BLUE : ORANGE,
-															}}>
-															{s.trim()}
-														</li>
-													))}
-												</ul>
-
-												{/* Actions */}
-												<div className="mt-4 flex items-center gap-3">
-													<a
-														href={p.href}
-														className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-black transition hover:bg-gray-50">
-														View details
-													</a>
-													<a
-														href="/contact"
-														className="inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-semibold text-white transition hover:brightness-95"
-														style={{
-															backgroundColor: i % 2 === 0 ? BLUE : ORANGE,
-														}}>
-														Request similar project
-													</a>
-												</div>
-											</div>
-										</article>
-									))}
-								</div>
-							</section>
-						);
-					})}
-				</div>
-
-				{/* Back to top */}
-				<div className="mt-12 flex justify-center">
-					<a
-						href="#top"
-						className="inline-flex items-center justify-center rounded-full border px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50"
+				{/* Filters */}
+				<div className="flex flex-wrap gap-4 justify-center mb-8">
+					<select
+						value={regionFilter}
+						onChange={(e) => setRegionFilter(e.target.value)}
+						className="rounded-lg border px-4 py-2 text-sm"
 						style={{ borderColor: BLUE }}>
-						↑ Back to top
-					</a>
+						{allRegions.map((r) => (
+							<option key={r}>{r}</option>
+						))}
+					</select>
+
+					<select
+						value={sectorFilter}
+						onChange={(e) => setSectorFilter(e.target.value)}
+						className="rounded-lg border px-4 py-2 text-sm"
+						style={{ borderColor: BLUE }}>
+						{allSectors.map((s) => (
+							<option key={s}>{s}</option>
+						))}
+					</select>
 				</div>
+
+				<div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+					{filteredProjects.map(({ project, region }) => (
+						<button
+							key={project.name}
+							onClick={() => {
+								setSelectedProject(project);
+								setSelectedRegion(region);
+							}}
+							className="text-left px-4 py-2 rounded-lg border transition hover:bg-orange-400 hover:text-white"
+							style={{ borderColor: BLUE, color: BLUE }}>
+							{project.name}
+						</button>
+					))}
+				</div>
+
+				{/* Modal */}
+				{selectedProject && (
+					<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 ">
+						<div className="w-full max-w-3xl overflow-hidden rounded-2xl bg-white shadow-xl">
+							{/* Header */}
+							<div className="flex items-center justify-between border-b p-4">
+								<h3 className="text-lg font-semibold text-black">
+									Project Details
+								</h3>
+								<button
+									onClick={() => setSelectedProject(null)}
+									className="rounded-md p-2 text-gray-600 transition hover:bg-gray-100"
+									aria-label="Close">
+									✕
+								</button>
+							</div>
+
+							{/* Table */}
+							<div className="overflow-x-auto p-2">
+								<table className="w-full text-left text-sm">
+									<thead className="bg-gray-50 text-gray-700">
+										<tr>
+											<th className="border px-4 py-3">PLACE</th>
+											<th className="border px-4 py-3">NAME</th>
+											<th className="border px-4 py-3">DESCRIPTION</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td className="align-top border px-4 py-3 text-gray-900">
+												{selectedRegion}
+											</td>
+											<td className="align-top border px-4 py-3 font-medium text-gray-900">
+												{selectedProject.name}
+											</td>
+											<td className="align-top border px-4 py-3 text-gray-800">
+												{selectedProject.scope}
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							{/* Footer */}
+							<div className="flex items-center justify-between gap-3 border-t p-4">
+								<div className="flex flex-wrap gap-2">
+									<span
+										className="rounded-full border px-2.5 py-1 text-xs font-medium"
+										style={{ borderColor: ORANGE, color: ORANGE }}>
+										{selectedProject.sector}
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				)}
 			</div>
 		</section>
 	);

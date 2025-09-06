@@ -21,7 +21,9 @@ export default function Navbar() {
   const [hovered, setHovered] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isDesktop, setIsDesktop] = useState<boolean>(true);
 
+  // Track scroll
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     onScroll();
@@ -29,17 +31,39 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Track viewport to decide desktop vs mobile
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const update = () => setIsDesktop(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  // Close drawer on route change
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
 
-  // When either scrolled or menu is open, switch to light-surface palette
-  const surface = scrolled || menuOpen;
-
+  // Palette
   const palette = useMemo(() => {
-    return surface
+    if (!isDesktop) {
+      // ✅ Always solid white on mobile
+      return {
+        navBg: "bg-white shadow-md",
+        brandPrimary: "text-zinc-900",
+        brandSecondary: "text-zinc-500",
+        linkBase: "text-zinc-800",
+        linkHover: "hover:text-[#0056A6]",
+        linkActive: "text-[#0056A6]",
+        iconBtn: "text-zinc-700 hover:bg-zinc-100",
+        underline: "bg-[#0056A6]",
+      };
+    }
+
+    return scrolled || menuOpen
       ? {
-          // Light surface (blurred white)
+          // Light surface (desktop scrolled or menu open)
           navBg:
             "bg-white/85 backdrop-blur-lg shadow-md supports-[backdrop-filter]:backdrop-blur-lg",
           brandPrimary: "text-zinc-900",
@@ -51,7 +75,7 @@ export default function Navbar() {
           underline: "bg-[#0056A6]",
         }
       : {
-          // Transparent over dark hero
+          // Transparent at top of hero (desktop only)
           navBg: "bg-transparent",
           brandPrimary: "text-white",
           brandSecondary: "text-white/70",
@@ -61,7 +85,7 @@ export default function Navbar() {
           iconBtn: "text-white hover:bg-white/10",
           underline: "bg-white",
         };
-  }, [surface]);
+  }, [scrolled, menuOpen, isDesktop]);
 
   return (
     <nav
@@ -118,7 +142,9 @@ export default function Navbar() {
                   href={link.href}
                   className={[
                     "transition duration-300",
-                    active ? palette.linkActive : [palette.linkBase, palette.linkHover].join(" "),
+                    active
+                      ? palette.linkActive
+                      : [palette.linkBase, palette.linkHover].join(" "),
                   ].join(" ")}
                 >
                   {link.label}
@@ -195,13 +221,19 @@ export default function Navbar() {
                 {LINKS.map((link) => {
                   const active = pathname === link.href;
                   return (
-                    <motion.div key={link.href} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+                    <motion.div
+                      key={link.href}
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
                       <Link
                         href={link.href}
                         onClick={() => setMenuOpen(false)}
                         className={[
                           "block rounded-md px-3 py-2 text-base font-medium transition-colors duration-300",
-                          active ? "bg-blue-50 text-[#0056A6]" : "text-slate-800 hover:bg-slate-100",
+                          active
+                            ? "bg-blue-50 text-[#0056A6]"
+                            : "text-slate-800 hover:bg-slate-100",
                         ].join(" ")}
                       >
                         {link.label}
