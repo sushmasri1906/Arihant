@@ -40,7 +40,7 @@ const DEFAULT_PROJECTS: Project[] = [
 
 export default function MajorProjects() {
 	return (
-		<section className="my-20 bg-white">
+		<section className="my-20 bg-neutral-50">
 			<div className="mx-auto max-w-7xl px-6 text-center">
 				<h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
 					Major <span style={{ color: ORANGE }}>Projects</span>
@@ -59,7 +59,7 @@ export default function MajorProjects() {
 					<Link
 						key={p.name}
 						href="/projects"
-						className="group flex flex-col justify-between rounded-lg border border-gray-200 bg-white p-5 text-left shadow-sm transition hover:shadow-md">
+						className="group flex flex-col justify-between rounded-lg border border-gray-200 bg-neutral-50 p-5 text-left shadow-sm transition hover:shadow-md">
 						<div>
 							<h3 className="text-sm font-semibold text-gray-900">{p.name}</h3>
 							<p className="mt-1 text-xs text-gray-600">{p.scope}</p>

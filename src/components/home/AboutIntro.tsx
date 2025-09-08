@@ -25,7 +25,7 @@ export default function AboutIntro({
 					<div className="h-[3px] w-8 rounded-full bg-[#FF7A1A]" />
 				</div>
 
-				<div className="overflow-hidden rounded-3xl border border-zinc-100 bg-white shadow-lg ring-1 ring-zinc-950/5 dark:border-zinc-800 dark:bg-zinc-900">
+				<div className="overflow-hidden rounded-3xl border border-zinc-100 bg-neutral-50 shadow-lg ring-1 ring-zinc-950/5 dark:border-zinc-800 dark:bg-zinc-900">
 					<div className="grid grid-cols-1 gap-8 p-6 sm:p-8 lg:grid-cols-12 lg:gap-12 lg:p-12">
 						{/* Left: Copy */}
 						<div className="lg:col-span-7 flex flex-col justify-center">
@@ -99,7 +99,7 @@ export default function AboutIntro({
 										<Stat
 											value="1000+"
 											label="Projects"
-											color="bg-white text-[#FF7A1A]"
+											color="bg-neutral-50 text-[#FF7A1A]"
 										/>
 										<Stat
 											value="200+"

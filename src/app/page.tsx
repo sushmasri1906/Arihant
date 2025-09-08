@@ -8,14 +8,14 @@ import MajorProjects from "@/components/home/MajorProjects";
 
 function page() {
 	return (
-		<>
+		<div className="bg-neutral-50">
 			<HeroCarousel />
 			<AboutIntro />
 			<WhyUs />
 			<ServiceIntro />
 			<ProductsServices />
 			<MajorProjects />
-		</>
+		</div>
 	);
 }
 
