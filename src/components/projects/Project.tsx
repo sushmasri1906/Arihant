@@ -472,18 +472,18 @@ export default function ProjectReferencesReadable() {
 		<section className="bg-white py-16 sm:py-20 lg:py-24">
 			<div className="mx-auto max-w-6xl px-6">
 				{/* Title */}
-				<div className="text-center mb-10">
+				<div className="text-center text-black mb-10">
 					<h2 className="text-3xl font-bold sm:text-4xl">
 						Project <span style={{ color: ORANGE }}>References</span>
 					</h2>
-					<p className="mt-2 text-gray-600">
+					<p className="mt-2 text-black">
 						Browse projects by region and sector. Click a project name to view
 						details.
 					</p>
 				</div>
 
 				{/* Filters */}
-				<div className="flex flex-wrap gap-4 justify-center mb-8">
+				<div className="flex flex-wrap gap-4 justify-center mb-8 text-black">
 					<select
 						value={regionFilter}
 						onChange={(e) => setRegionFilter(e.target.value)}

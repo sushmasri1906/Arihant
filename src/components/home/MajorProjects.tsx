@@ -40,7 +40,7 @@ const DEFAULT_PROJECTS: Project[] = [
 
 export default function MajorProjects() {
 	return (
-		<section className="my-20">
+		<section className="my-20 bg-white">
 			<div className="mx-auto max-w-7xl px-6 text-center">
 				<h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
 					Major <span style={{ color: ORANGE }}>Projects</span>

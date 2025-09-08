@@ -37,7 +37,7 @@ export default function Process() {
 	];
 
 	return (
-		<section className="relative overflow-hidden bg-white mb-10">
+		<section className="relative overflow-hidden bg-white pb-10">
 			<div className="mx-auto max-w-7xl px-6">
 				{/* Header */}
 				<div className="text-center">

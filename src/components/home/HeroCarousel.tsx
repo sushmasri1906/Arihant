@@ -74,22 +74,38 @@ const HeroCarousel = () => {
 				whileInView={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.6, ease: "easeOut" }}
 				viewport={{ once: true }}
-				className="absolute left-4 right-4 top-[46%] sm:left-8 md:left-14 lg:left-24">
+				className="absolute left-4 right-4 top-[28%] sm:left-8 md:left-14 lg:left-24">
 				<div className="max-w-3xl p-3 sm:p-5 md:p-8">
+					{/* Title */}
 					<h1 className="text-white font-extrabold tracking-tight leading-tight text-2xl sm:text-3xl md:text-5xl">
-						Arihant <span style={{ color: BLUE }}>Control</span>{" "}
-						<span >Systems</span>
+						Arihant <span style={{ color: BLUE }}>Control</span> Systems
 					</h1>
+
+					{/* Subtitle */}
 					<p className="mt-3 text-white/95 text-sm sm:text-base md:text-lg max-w-2xl">
 						High-Grade Electrical Panels & Contracting –{" "}
-						<span  className="font-semibold">
-							Class 1/A Certified
-						</span>{" "}
-						for Safety, Reliability, and Peak Performance
+						<span className="font-semibold">Class 1/A Certified</span> for
+						Safety, Reliability, and Peak Performance
 					</p>
 
-					{/* Product chips */}
-					<div className="mt-4 flex flex-wrap gap-2">
+					{/* ✅ CTA for mobile (always under subtitle) */}
+					<div className="mt-4 flex flex-wrap gap-3 sm:hidden">
+						<Link
+							href="/services"
+							className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-semibold text-white"
+							style={{ backgroundColor: BLUE }}>
+							Explore Services
+						</Link>
+						<Link
+							href="/contact"
+							className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-semibold text-white"
+							style={{ backgroundColor: ORANGE }}>
+							Contact Us
+						</Link>
+					</div>
+
+					{/* ✅ Chips only for tablets & desktops */}
+					<div className="mt-4 hidden sm:flex flex-wrap gap-2">
 						{[
 							"MCC",
 							"PCC",
@@ -112,17 +128,17 @@ const HeroCarousel = () => {
 						))}
 					</div>
 
-					{/* CTAs */}
-					<div className="mt-6 flex flex-wrap gap-3">
+					{/* ✅ CTA for sm+ (below chips) */}
+					<div className="mt-6 hidden sm:flex flex-wrap gap-3">
 						<Link
 							href="/services"
-							className="inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold text-white hover:opacity-95"
+							className="inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold text-white"
 							style={{ backgroundColor: BLUE }}>
 							Explore Services
 						</Link>
 						<Link
 							href="/contact"
-							className="inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold text-white transition hover:opacity-95"
+							className="inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold text-white"
 							style={{ backgroundColor: ORANGE }}>
 							Contact Us
 						</Link>

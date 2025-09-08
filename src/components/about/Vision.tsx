@@ -3,7 +3,7 @@ const ORANGE = "#FF7A1A";
 
 export default function Vision() {
 	return (
-		<section className="relative overflow-hidden bg-white mb-10">
+		<section className="relative overflow-hidden bg-white pb-10">
 			{/* Decorative background gradients */}
 			<div
 				aria-hidden

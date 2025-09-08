@@ -48,24 +48,49 @@ export default function Navbar() {
   // Palette
   const palette = useMemo(() => {
     if (!isDesktop) {
-      // ✅ Always solid white on mobile
+      // ✅ Mobile behavior
+      if (menuOpen) {
+        return {
+          navBg: "bg-white shadow-md",
+          brandPrimary: "text-zinc-900",
+          brandSecondary: "text-zinc-500",
+          linkBase: "text-zinc-800",
+          linkHover: "hover:text-[#0056A6]",
+          linkActive: "text-[#0056A6]",
+          iconBtn: "text-zinc-700 hover:bg-zinc-100",
+          underline: "bg-[#0056A6]",
+        };
+      }
+      if (scrolled) {
+        return {
+          navBg: "bg-white shadow-md",
+          brandPrimary: "text-zinc-900",
+          brandSecondary: "text-zinc-500",
+          linkBase: "text-zinc-800",
+          linkHover: "hover:text-[#0056A6]",
+          linkActive: "text-[#0056A6]",
+          iconBtn: "text-zinc-700 hover:bg-zinc-100",
+          underline: "bg-[#0056A6]",
+        };
+      }
+      // Transparent at top
       return {
-        navBg: "bg-white shadow-md",
-        brandPrimary: "text-zinc-900",
-        brandSecondary: "text-zinc-500",
-        linkBase: "text-zinc-800",
-        linkHover: "hover:text-[#0056A6]",
-        linkActive: "text-[#0056A6]",
-        iconBtn: "text-zinc-700 hover:bg-zinc-100",
-        underline: "bg-[#0056A6]",
+        navBg: "bg-transparent",
+        brandPrimary: "text-white",
+        brandSecondary: "text-white/70",
+        linkBase: "text-white/90",
+        linkHover: "hover:text-white",
+        linkActive: "text-white",
+        iconBtn: "text-white hover:bg-white/10",
+        underline: "bg-white",
       };
     }
 
+    // ✅ Desktop behavior
     return scrolled || menuOpen
       ? {
-          // Light surface (desktop scrolled or menu open)
           navBg:
-            "bg-white/85 backdrop-blur-lg shadow-md supports-[backdrop-filter]:backdrop-blur-lg",
+            "bg-white/90 backdrop-blur-lg shadow-md supports-[backdrop-filter]:backdrop-blur-lg",
           brandPrimary: "text-zinc-900",
           brandSecondary: "text-zinc-500",
           linkBase: "text-zinc-800",
@@ -75,7 +100,6 @@ export default function Navbar() {
           underline: "bg-[#0056A6]",
         }
       : {
-          // Transparent at top of hero (desktop only)
           navBg: "bg-transparent",
           brandPrimary: "text-white",
           brandSecondary: "text-white/70",
