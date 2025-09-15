@@ -78,7 +78,7 @@ const HeroCarousel = () => {
 				<div className="max-w-3xl p-3 sm:p-5 md:p-8">
 					{/* Title */}
 					<h1 className="text-white font-extrabold tracking-tight leading-tight text-2xl sm:text-3xl md:text-5xl">
-						Arihant <span style={{ color: BLUE }}>Control</span> Systems
+						Arihant Control Systems
 					</h1>
 
 					{/* Subtitle */}

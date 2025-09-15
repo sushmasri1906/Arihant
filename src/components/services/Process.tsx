@@ -20,13 +20,13 @@ export default function Process() {
 			color: BLUE,
 		},
 		{
-			title: "Installation & Commissioning",
-			desc: "On-site installation, interconnections, and commissioning by trained technicians with method statements and checklists.",
+			title: "Installation, Testing & Commissioning",
+			desc: "Complete on-site installation, system interconnections, and rigorous testing/commissioning executed by certified technicians with detailed checklists.",
 			color: ORANGE,
 		},
 		{
-			title: "Testing & Handover",
-			desc: "End-to-end testing (FAT/SAT), documentation, safety clearances, and formal handover to your operations team.",
+			title: "Project Completion & Handover",
+			desc: "Final documentation, regulatory clearances, and smooth handover of a fully tested and operational system to your team.",
 			color: BLUE,
 		},
 		{
