@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 const BLUE = "text-[#0056A6]";
 const ORANGE = "text-[#FF7A1A]";
@@ -11,7 +12,7 @@ type AboutPreviewProps = {
 };
 
 export default function AboutIntro({
-	className = "bg-white",
+	className = "bg-white dark:bg-zinc-900",
 	readMoreHref = "/about",
 }: AboutPreviewProps) {
 	return (
@@ -25,7 +26,7 @@ export default function AboutIntro({
 					<div className="h-[3px] w-8 rounded-full bg-[#FF7A1A]" />
 				</div>
 
-				<div className="overflow-hidden rounded-3xl border border-zinc-100 bg-neutral-50 shadow-lg ring-1 ring-zinc-950/5 dark:border-zinc-800 dark:bg-zinc-900">
+				<div className="overflow-hidden rounded-3xl border border-zinc-100 bg-white dark:bg-zinc-900 shadow-lg ring-1 ring-zinc-950/5 dark:border-zinc-800">
 					<div className="grid grid-cols-1 gap-8 p-6 sm:p-8 lg:grid-cols-12 lg:gap-12 lg:p-12">
 						{/* Left: Copy */}
 						<div className="lg:col-span-7 flex flex-col justify-center">
@@ -85,40 +86,52 @@ export default function AboutIntro({
 
 						{/* Right: Stats card */}
 						<div className="lg:col-span-5">
-							<div className="flex h-full flex-col justify-between gap-6 rounded-2xl border border-zinc-100 bg-zinc-50 p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-								<div>
-									<div className="text-xs font-medium uppercase tracking-wider text-zinc-500">
-										At a glance
-									</div>
-									<div className="mt-4 grid grid-cols-1 sm:grid-cols-3 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800">
-										<Stat
-											value="25+"
-											label="Years"
-											color="bg-[#0056A6] text-white"
-										/>
-										<Stat
-											value="1000+"
-											label="Projects"
-											color="bg-neutral-50 text-[#FF7A1A]"
-										/>
-										<Stat
-											value="200+"
-											label="Clients"
-											color="bg-[#FF7A1A] text-white"
-										/>
-									</div>
-								</div>
+							<div className="relative flex h-full flex-col justify-between gap-6 rounded-2xl border border-zinc-100 bg-white dark:bg-zinc-900 shadow-sm dark:border-zinc-800 overflow-hidden">
+								{/* Background Image */}
+								<Image
+									src="https://res.cloudinary.com/dk0smdu0d/image/upload/v1756921031/8_w4vlz8.png"
+									alt="Background pattern"
+									fill
+									className="object-cover opacity-20"
+								/>
 
-								{/* Optional Read More in stats card */}
-								<div className="hidden sm:block">
-									<Link
-										href={readMoreHref}
-										className="inline-flex w-full items-center justify-center rounded-lg bg-[#0056A6] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#004080]">
-										Read More
-									</Link>
+								{/* Overlay Content */}
+								<div className="relative z-2 p-6 flex flex-col  h-full justify-between gap-6">
+									<div>
+										<div className="text-xs font-medium uppercase tracking-wider text-zinc-500">
+											At a glance
+										</div>
+										<div className="mt-4 grid grid-cols-1 sm:grid-cols-3 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800">
+											<Stat
+												value="25+"
+												label="Years"
+												color="bg-[#0056A6] text-white"
+											/>
+											<Stat
+												value="1000+"
+												label="Projects"
+												color="bg-neutral-50 text-[#FF7A1A]"
+											/>
+											<Stat
+												value="200+"
+												label="Clients"
+												color="bg-[#FF7A1A] text-white"
+											/>
+										</div>
+									</div>
+
+									{/* Optional Read More in stats card */}
+									<div className="hidden sm:block">
+										<Link
+											href={readMoreHref}
+											className="inline-flex w-full items-center justify-center rounded-lg bg-[#0056A6] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#004080]">
+											Read More
+										</Link>
+									</div>
 								</div>
 							</div>
 						</div>
+						{/* End Stats Card */}
 					</div>
 				</div>
 			</div>
