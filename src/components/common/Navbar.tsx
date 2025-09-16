@@ -126,11 +126,11 @@ export default function Navbar() {
 					className="group inline-flex items-center gap-2 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0056A6]">
 					<div className="flex items-center">
 						<Image
-							src="https://res.cloudinary.com/dgulr1hgd/image/upload/v1757858658/ACS_Logo_PNG_jzlitw.png"
+							src="https://res.cloudinary.com/dgulr1hgd/image/upload/w_400,q_auto,f_auto/v1758015372/3_rua9gv.png"
 							alt="Arihant Control Systems Logo"
-							width={40}
-							height={40}
-							className="h-20 w-26 object-contain p-2 "
+							width={160} // logical size
+							height={80}
+							className="h-20 w-40 object-contain p-2"
 							priority
 						/>
 					</div>
