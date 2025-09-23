@@ -1,176 +1,86 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { useMemo } from "react";
+import Image from "next/image";
 
-// ---------- Data ----------
-const MAIN_IMAGE =
-	"https://res.cloudinary.com/dk0smdu0d/image/upload/v1756921036/7_v9lfs7.png";
-
-const PRODUCT_GROUPS: Array<{
-	main: string;
-	others: Array<{ src: string }>;
-}> = [
+const products = [
 	{
-		main: MAIN_IMAGE,
-		others: [
-			{
-				src: "https://res.cloudinary.com/dk0smdu0d/image/upload/v1756921031/8_w4vlz8.png",
-			},
-			{
-				src: "https://res.cloudinary.com/dk0smdu0d/image/upload/v1756921022/9_mq6see.png",
-			},
-			{
-				src: "https://res.cloudinary.com/dk0smdu0d/image/upload/v1756921026/10_pz21fa.png",
-			},
-			{
-				src: "https://res.cloudinary.com/dk0smdu0d/image/upload/v1756921031/11_uqbcit.png",
-			},
-		],
+		name: "MCC Panel Boards",
+		image:
+			"https://res.cloudinary.com/dk0smdu0d/image/upload/v1758622414/acs2_vqjvdy.png",
 	},
 	{
-		main: "https://res.cloudinary.com/dk0smdu0d/image/upload/v1756921033/12_dabsyo.png",
-		others: [
-			{
-				src: "https://res.cloudinary.com/dk0smdu0d/image/upload/v1756921029/13_tngz2m.png",
-			},
-			{
-				src: "https://res.cloudinary.com/dk0smdu0d/image/upload/v1756921025/14_xzk95d.png",
-			},
-			{
-				src: "https://res.cloudinary.com/dk0smdu0d/image/upload/v1756921017/15_zyeo5b.png",
-			},
-			{
-				src: "https://res.cloudinary.com/dk0smdu0d/image/upload/v1756921018/16_sw8tdx.png",
-			},
-		],
+		name: "Control Disk Panel Boards",
+		image:
+			"https://res.cloudinary.com/dk0smdu0d/image/upload/v1758624186/acs3_usrgq7.png",
+	},
+	{
+		name: "PCC & APFC Panel Boards",
+		image:
+			"https://res.cloudinary.com/dk0smdu0d/image/upload/v1756921036/7_v9lfs7.png",
+	},
+	{
+		name: "PCC & APFC Panel Boards",
+		image:
+			"https://res.cloudinary.com/dk0smdu0d/image/upload/v1758624452/acs4_ozljyj.png",
+	},
+	{
+		name: "PCC & APFC Panel Boards",
+		image:
+			"https://res.cloudinary.com/dk0smdu0d/image/upload/v1758624500/acs5_zihqmt.png",
 	},
 ];
 
-// ---------- Motion Variants ----------
-const fadeUp = {
-	initial: { opacity: 0, y: 32 },
-	animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
-const staggerContainer = {
-	animate: { transition: { staggerChildren: 0.08 } },
-};
-
-// ---------- Helper ----------
-function cn(...classes: Array<string | false | null | undefined>) {
-	return classes.filter(Boolean).join(" ");
-}
-
-// ---------- Sub-components ----------
-function SectionHeader() {
+export default function ManufacturingProducts() {
 	return (
-		<div className="mx-auto mb-12 max-w-3xl text-center">
-			<motion.span
-				className="inline-block rounded-full border px-3 py-1 text-xs font-medium tracking-wide text-sky-700 border-sky-200 bg-sky-50"
-				{...fadeUp}>
-				Our Product Lines
-			</motion.span>
-			<motion.h2
-				className="mt-4 text-3xl font-extrabold leading-tight text-[#0056A6] md:text-4xl"
-				{...fadeUp}>
-				Manufacturing Products
-			</motion.h2>
-			<motion.p
-				className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg"
-				{...fadeUp}>
-				Empowering innovation and precision manufacturing. From circuit to
-				system, we engineer excellence in every component—built to electrify
-				industries and illuminate possibilities.
-			</motion.p>
-		</div>
-	);
-}
-
-function ProductCard({ src }: { src: string }) {
-	return (
-		<motion.figure
-			variants={fadeUp}
-			className={cn(
-				"group relative overflow-hidden rounded-xl border bg-white shadow-sm transition-shadow",
-				"hover:shadow-lg focus-within:shadow-lg"
-			)}
-			tabIndex={0}>
-			<div className="relative aspect-[4/3] w-full">
-				<Image
-					src={src}
-					alt="Product"
-					fill
-					sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-					className="object-cover transition-transform duration-500 group-hover:scale-105"
-					priority={false}
-				/>
-			</div>
-		</motion.figure>
-	);
-}
-
-function GroupBlock({
-	index,
-	main,
-	others,
-}: {
-	index: number;
-	main: string;
-	others: Array<{ src: string }>;
-}) {
-	const priority = useMemo(() => index === 0, [index]);
-
-	return (
-		<section className="mb-20">
-			{/* Main banner */}
-			<motion.div
-				variants={fadeUp}
-				initial="initial"
-				whileInView="animate"
-				viewport={{ once: true, amount: 0.3 }}
-				className="relative w-full overflow-hidden rounded-2xl border bg-white shadow-lg">
-				<div className="relative aspect-[16/9] w-full">
-					<Image
-						src={main}
-						alt="Main Product"
-						fill
-						sizes="100vw"
-						priority={priority}
-						className="object-cover"
-					/>
+		<section className="relative bg-white py-16 lg:py-24">
+			<div className="mx-auto max-w-7xl px-6 lg:px-8">
+				{/* Header */}
+				<div className="text-center mb-12">
+					<h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
+						Our <span className="text-[#0056A6]">Manufacturing</span>{" "}
+						<span className="text-[#FF7A1A]">Products</span>
+					</h2>
+					<p className="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">
+						Precision-engineered panels for safe, efficient, and reliable
+						operations.
+					</p>
 				</div>
-			</motion.div>
 
-			{/* Grid */}
-			<motion.div
-				variants={staggerContainer}
-				initial="initial"
-				whileInView="animate"
-				viewport={{ once: true, amount: 0.2 }}
-				className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-				{others.map((item, i) => (
-					<ProductCard key={`${index}-${i}`} src={item.src} />
-				))}
-			</motion.div>
-		</section>
-	);
-}
+				{/* Product Grid */}
+				<div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+					{products.map((product, index) => (
+						<motion.div
+							key={index}
+							initial={{ opacity: 0, y: 50 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.6, delay: index * 0.1 }}
+							viewport={{ once: true }}
+							className="group relative rounded-2xl bg-white border border-gray-200 shadow-lg overflow-hidden hover:shadow-2xl transition">
+							{/* Gradient border hover effect */}
+							<div className="absolute inset-0 border-2 border-transparent rounded-2xl group-hover:border-[#0056A6]/70 group-hover:shadow-[0_0_15px_#FF7A1A] transition-all duration-500"></div>
 
-export default function Products() {
-	return (
-		<section className="relative bg-gradient-to-b from-white to-sky-50 py-16 lg:py-24">
-			<div className="mx-auto max-w-7xl px-4 lg:px-8">
-				<SectionHeader />
-				{PRODUCT_GROUPS.map((g, idx) => (
-					<GroupBlock key={idx} index={idx} main={g.main} others={g.others} />
-				))}
+							{/* Image */}
+							<div className="relative w-full h-64 flex items-center justify-center bg-gray-50">
+								<Image
+									src={product.image}
+									alt={product.name}
+									fill
+									className="object-contain p-6"
+								/>
+							</div>
+
+							{/* Name */}
+							<div className="p-5 text-center relative z-10">
+								<h3 className="text-lg font-bold text-gray-900 group-hover:text-[#0056A6]">
+									{product.name}
+								</h3>
+								<div className="mt-3 h-1 w-12 bg-gradient-to-r from-[#0056A6] to-[#FF7A1A] mx-auto rounded-full group-hover:w-20 transition-all duration-500"></div>
+							</div>
+						</motion.div>
+					))}
+				</div>
 			</div>
-
-			{/* Decorative blurs */}
-			<div className="pointer-events-none absolute -top-10 left-1/3 h-40 w-40 rounded-full bg-sky-200/40 blur-3xl" />
-			<div className="pointer-events-none absolute bottom-0 right-1/4 h-48 w-48 rounded-full bg-blue-200/40 blur-3xl" />
 		</section>
 	);
 }
