@@ -9,11 +9,10 @@ function page() {
 	return (
 		<>
 			<ContactHero />
-            <ContactInfo/>
-            <BusinessHours/>
-             <Cta/>
-            <Map/>
-           
+			<ContactInfo />
+			<BusinessHours />
+			<Cta />
+			<Map />
 		</>
 	);
 }

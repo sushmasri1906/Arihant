@@ -1,12 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import {
-	FaFacebookF,
-	FaLinkedinIn,
-	FaTwitter,
-	FaInstagram,
-} from "react-icons/fa";
 import Image from "next/image";
 
 export default function Footer() {
@@ -34,7 +28,7 @@ export default function Footer() {
 								<Image
 									src="https://res.cloudinary.com/dgulr1hgd/image/upload/w_400,q_auto,f_auto/v1758015372/3_rua9gv.png"
 									alt="Arihant Control Systems Logo"
-									width={160} // logical size
+									width={160}
 									height={80}
 									className="h-20 w-40 object-contain p-2 bg-white rounded-md"
 									priority
@@ -119,7 +113,7 @@ export default function Footer() {
 					</nav>
 
 					{/* Contact */}
-					<div aria-label="Contact information" className="space-y-2">
+					<div aria-label="Contact information" className="space-y-1">
 						<h3 className="text-base font-semibold">Get in Touch</h3>
 						<p className="text-sm text-white/90">
 							Mon–Sat: 9:30 AM – 6:30 PM IST
@@ -131,42 +125,26 @@ export default function Footer() {
 								className="underline underline-offset-2 hover:text-white">
 								+91 99511 19777
 							</Link>
-							,{" "}
-							<Link
-								href="tel:+919246356924"
-								className="underline underline-offset-2 hover:text-white">
-								+91 92463 56924
-							</Link>
 						</p>
 						<p className="text-sm text-white/90">
 							Email:{" "}
 							<Link
-								href="mailto:info@arihantcontrols.com"
+								href="mailto:arihantcontrol@gmail.com"
 								className="underline underline-offset-2 hover:text-white">
-								info@arihantcontrols.com
+								arihantcontrol@gmail.com
 							</Link>
 						</p>
-						<p className="text-sm text-white/90 leading-snug">
-							Address: SY. NO. 316, Plot No. 5, Near Aaiyee Matha Temple,
-							Pipeline Road, Subhash Nagar, IDA Jeedimetla, Hyderabad – 500055,
-							India
-						</p>
 
-						{/* Socials */}
-						<div className="flex items-center gap-2 pt-1">
-							<Social href="#" label="Facebook">
-								<FaFacebookF size={15} />
-							</Social>
-							<Social href="#" label="LinkedIn">
-								<FaLinkedinIn size={15} />
-							</Social>
-							<Social href="#" label="Twitter">
-								<FaTwitter size={15} />
-							</Social>
-							<Social href="#" label="Instagram">
-								<FaInstagram size={15} />
-							</Social>
-						</div>
+						<p className="text-xs text-white/90 leading-tight">
+							<strong>Address 1:</strong> SY. NO. 316, Plot No. 5, Near Aaiyee
+							Matha Temple, Pipeline Road, Subhash Nagar, IDA Jeedimetla,
+							Hyderabad – 500055, India
+						</p>
+						<p className="text-xs text-white/90 leading-tight">
+							<strong>Address 2:</strong> SY. NO. 354, Plot No. E30 &amp; E36,
+							Industrial Park, TSIIC Area, Kallakal (V), Manoharabad (M), Medak
+							District, Telangana – 502334, India
+						</p>
 					</div>
 				</div>
 
@@ -205,25 +183,5 @@ export default function Footer() {
 				</div>
 			</div>
 		</footer>
-	);
-}
-
-function Social({
-	href,
-	label,
-	children,
-}: {
-	href: string;
-	label: string;
-	children: React.ReactNode;
-}) {
-	return (
-		<Link
-			href={href}
-			aria-label={label}
-			className="group inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#0b2d55] shadow-sm outline-none transition hover:bg-white/90 focus:ring-2 focus:ring-white/40">
-			<span className="sr-only">{label}</span>
-			{children}
-		</Link>
 	);
 }

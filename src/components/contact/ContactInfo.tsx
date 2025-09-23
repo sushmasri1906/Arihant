@@ -100,9 +100,9 @@ export default function ContactInfo() {
 							<div>
 								<h3 className="text-base font-semibold text-black">Email</h3>
 								<a
-									href="mailto:arihant.mrkt@gmail.com"
+									href="mailto:arihantcontrol@gmail.com"
 									className="mt-1 block text-sm font-medium text-blue-700 hover:underline">
-									arihant.mrkt@gmail.com
+									arihantcontrol@gmail.com
 								</a>
 							</div>
 						</div>

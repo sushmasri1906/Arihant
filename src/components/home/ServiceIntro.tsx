@@ -18,6 +18,7 @@ const DEFAULT_ITEMS = [
 	{ label: "Internal & External Lighting" },
 	{ label: "Overhead Transmission Towers" },
 	{ label: "Overhead Transmission Lines" },
+	{ label: "Design, manufacturing and Installation of HVAC Control Panels" },
 ];
 
 export default function ServiceIntro({
