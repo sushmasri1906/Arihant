@@ -35,7 +35,6 @@ export default function ManufacturingProducts() {
 	return (
 		<section className="relative bg-white py-16 lg:py-24">
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
-				{/* Header */}
 				<div className="text-center mb-12">
 					<h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
 						Our <span className="text-[#0056A6]">Manufacturing</span>{" "}
