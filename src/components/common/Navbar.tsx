@@ -128,9 +128,9 @@ export default function Navbar() {
 						<Image
 							src="https://res.cloudinary.com/dgulr1hgd/image/upload/w_400,q_auto,f_auto/v1758015372/3_rua9gv.png"
 							alt="Arihant Control Systems Logo"
-							width={160} // logical size
+							width={180} // logical size
 							height={80}
-							className="h-20 w-40 object-contain p-2"
+							className="h-20 w-48 object-contain p-2"
 							priority
 						/>
 					</div>

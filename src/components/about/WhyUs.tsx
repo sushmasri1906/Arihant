@@ -20,7 +20,7 @@ export default function WhyUs() {
 				<div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 					{[
 						{
-							title: "Better Service at Lower Cost",
+							title: "High-quality services at reasonable prices",
 							desc: "We deliver high service levels while reducing overall expenditure for clients.",
 						},
 						{
@@ -75,9 +75,7 @@ export default function WhyUs() {
 										/>
 									</svg>
 								</span>
-								<h3
-									className="text-lg font-semibold"
-									style={{ color: BLUE }}>
+								<h3 className="text-lg font-semibold" style={{ color: BLUE }}>
 									{item.title}
 								</h3>
 							</div>
