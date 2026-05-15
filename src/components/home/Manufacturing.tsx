@@ -16,8 +16,6 @@ import {
 	FaProjectDiagram,
 } from "react-icons/fa";
 
-const BLUE = "#0056A6";
-
 type Product = {
 	name: string;
 	slug: string;
@@ -128,56 +126,44 @@ const MANUFACTURING_PRODUCTS: Product[] = [
 
 export default function Manufacturing() {
 	const [showAll, setShowAll] = useState(false);
+
 	const visibleProducts = showAll
 		? MANUFACTURING_PRODUCTS
 		: MANUFACTURING_PRODUCTS.slice(0, 6);
 
 	return (
-		<section className="relative w-full isolate" aria-labelledby="mfg-title">
-			{/* Background image as an actual element so it always fills and shows */}
-			<img
-				src="https://res.cloudinary.com/dk0smdu0d/image/upload/v1756907857/News-Twitter-post-7_arrrcz.png"
-				alt=""
-				aria-hidden
-				className="absolute inset-0 -z-20 h-full w-full object-cover"
-			/>
-
-			{/* Readability overlay (top-to-bottom gradient) */}
-			<div
-				aria-hidden
-				className="absolute inset-0 -z-10"
-				style={{
-					background:
-						"linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.45) 35%, rgba(0,0,0,0.55) 100%)",
-				}}
-			/>
-
-			<div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+		<section
+			className="w-full bg-white py-12 sm:py-14 lg:py-16"
+			aria-labelledby="mfg-title">
+			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 				{/* Heading */}
-				<div className="mb-6 text-center">
+				<div className="mb-10 text-center">
 					<h2
 						id="mfg-title"
-						className="text-2xl font-semibold tracking-tight text-white sm:text-3xl lg:text-4xl">
+						className="text-2xl font-bold tracking-tight text-[#0056A6] sm:text-3xl lg:text-4xl">
 						Manufacturing Products
 					</h2>
-					<p className="mt-2 mx-auto max-w-3xl text-sm leading-relaxed text-gray-200 sm:text-base">
+
+					<div className="mx-auto mt-3 h-1 w-24 rounded-full bg-orange-500" />
+
+					<p className="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-gray-600 sm:text-base">
 						High-quality LT panels and power distribution solutions built for
-						performance and safety.
+						performance, reliability, and industrial safety.
 					</p>
 				</div>
 
 				{/* Grid */}
-				<div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
+				<div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 					{visibleProducts.map((p) => (
 						<ProductCard key={p.slug} product={p} />
 					))}
 				</div>
 
-				{/* See More / See Less */}
-				<div className="mt-8 flex justify-center">
+				{/* Button */}
+				<div className="mt-10 flex justify-center">
 					<button
 						onClick={() => setShowAll(!showAll)}
-						className="px-6 py-2 text-sm font-medium rounded-full border border-white/60 text-white/95 hover:bg-neutral-50/10 focus:outline-none focus:ring-2 focus:ring-white/60 transition">
+						className="rounded-full bg-[#0056A6] px-6 py-3 text-sm font-medium text-white shadow-md transition hover:bg-[#004080]">
 						{showAll ? "See Less" : "See More"}
 					</button>
 				</div>
@@ -188,21 +174,20 @@ export default function Manufacturing() {
 
 function ProductCard({ product }: { product: Product }) {
 	return (
-		<article className="group relative flex flex-col justify-between rounded-2xl bg-neutral-50/90 backdrop-blur-sm shadow-2xl transition hover:shadow-lg">
-			{product.icon && (
-				<div className="flex justify-center bg-[rgba(0,86,166,0.05)] p-4">
-					<div className="flex h-12 w-12 items-center justify-center rounded-lg bg-neutral-50/70 text-[rgba(0,86,166,1)] transition-colors duration-300 group-hover:text-orange-500">
-						{product.icon}
-					</div>
+		<article className="group flex h-full flex-col rounded-2xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+			{/* Icon */}
+			<div className="flex justify-center pt-6">
+				<div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#0056A6]/10 text-[#0056A6] transition duration-300 group-hover:bg-orange-100 group-hover:text-orange-500">
+					{product.icon}
 				</div>
-			)}
-			{/* Body */}
-			<div className="flex flex-col gap-2 p-5">
-				<h3 className="text-base font-semibold leading-snug text-orange-500">
-					{product.name}
-				</h3>
+			</div>
+
+			{/* Content */}
+			<div className="flex flex-1 flex-col p-6 text-center">
+				<h3 className="text-lg font-semibold text-[#0056A6]">{product.name}</h3>
+
 				{product.blurb && (
-					<p className="text-sm leading-relaxed text-zinc-700">
+					<p className="mt-3 text-sm leading-relaxed text-gray-600">
 						{product.blurb}
 					</p>
 				)}

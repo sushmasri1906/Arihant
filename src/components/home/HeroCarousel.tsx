@@ -1,21 +1,28 @@
 "use client";
 
 import Slider from "react-slick";
-import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const images = [
-	"https://res.cloudinary.com/dk0smdu0d/image/upload/v1756907857/Blogpost-image_iec-61850-in-substation-automation_bb4a5d71-048e-455f-8573-ca864458575a_z63ayl.jpg",
-	"https://res.cloudinary.com/dk0smdu0d/image/upload/v1756907858/yelantsevv_AdobeStock_304496813_b6jq7h.jpg",
-	"https://res.cloudinary.com/dk0smdu0d/image/upload/v1756907857/bg-substation-maintenance_i2f8qr.jpg",
-	"https://res.cloudinary.com/dk0smdu0d/image/upload/v1756907857/electrical_20switchboard_exbn0v.png",
-];
-
 const BLUE = "#0056A6";
 const ORANGE = "#FF7A1A";
+
+const slides = [
+	{
+		title: "Powering Industries with Precision",
+		desc: "Advanced Electrical Panels & Industrial Automation Solutions engineered for safety, efficiency, and long-term reliability.",
+	},
+	{
+		title: "Class 1/A Certified Electrical Experts",
+		desc: "Trusted contracting and panel manufacturing services delivering uncompromised quality across commercial and industrial projects.",
+	},
+	{
+		title: "Reliable. Scalable. Future-Ready.",
+		desc: "From MCC & PCC Panels to DG Synchronization and Bus Ducts — complete solutions tailored for modern infrastructure.",
+	},
+];
 
 const HeroCarousel = () => {
 	const settings = {
@@ -25,126 +32,135 @@ const HeroCarousel = () => {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		autoplay: true,
-		autoplaySpeed: 3500,
+		autoplaySpeed: 4000,
 		pauseOnHover: false,
 		arrows: false,
 		fade: true,
-		adaptiveHeight: false,
-		responsive: [
-			{ breakpoint: 1280, settings: { fade: true } },
-			{ breakpoint: 1024, settings: { fade: false } },
-			{ breakpoint: 640, settings: { fade: false } },
-		],
 	};
 
 	return (
-		<section className="relative w-screen h-[60vh] sm:h-[68vh] md:h-[76vh] lg:h-screen overflow-hidden">
-			{/* Background Slider */}
+		<section className="relative w-screen h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-screen overflow-hidden bg-[#021B33]">
 			<Slider {...settings}>
-				{images.map((src, index) => (
+				{slides.map((slide, index) => (
 					<div
 						key={index}
-						className="relative h-[60vh] sm:h-[68vh] md:h-[76vh] lg:h-screen">
-						<Image
-							src={src}
-							alt={`Arihant control systems slide ${index + 1}`}
-							fill
-							priority={index === 0}
-							sizes="100vw"
-							className="object-cover"
-						/>
-						{/* Vignette + brand overlay */}
+						className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-screen overflow-hidden">
+						{/* Premium Background */}
 						<div
-							aria-hidden
 							className="absolute inset-0"
 							style={{
 								background: `
-                  radial-gradient(120% 120% at 20% 35%, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0.06) 75%, rgba(0,0,0,0) 100%),
-                  linear-gradient(90deg, rgba(0,86,166,0.28) 0%, rgba(255,122,26,0.25) 55%, rgba(0,86,166,0.18) 100%)
+                  linear-gradient(135deg, #021B33 0%, #003C75 45%, #0056A6 100%)
                 `,
 							}}
 						/>
+
+						{/* Elegant Gradient Lighting */}
+						<div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,122,26,0.12),transparent_30%)]" />
+						<div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.06),transparent_35%)]" />
+
+						{/* Professional Grid */}
+						<div className="absolute inset-0 opacity-[0.05]">
+							<div
+								className="w-full h-full"
+								style={{
+									backgroundImage: `
+                    linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)
+                  `,
+									backgroundSize: "70px 70px",
+								}}
+							/>
+						</div>
+
+						{/* Subtle Accent Line */}
+						<div className="absolute top-0 left-0 w-full h-[4px] bg-gradient-to-r from-[#FF7A1A] via-[#0056A6] to-[#FF7A1A]" />
+
+						{/* Content */}
+						<div className="relative z-10 flex items-center h-full">
+							<motion.div
+								initial={{ opacity: 0, y: 30 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.7 }}
+								className="px-5 sm:px-10 md:px-16 lg:px-24 max-w-4xl">
+								{/* Badge */}
+								<div
+									className="inline-flex items-center rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium mb-5 border"
+									style={{
+										background: "rgba(255,255,255,0.06)",
+										borderColor: "rgba(255,255,255,0.12)",
+										color: "#fff",
+										backdropFilter: "blur(10px)",
+									}}>
+									Class 1/A Certified Electrical Contractors
+								</div>
+
+								{/* Heading */}
+								<h1 className="text-white font-extrabold tracking-tight leading-tight text-3xl sm:text-4xl md:text-6xl">
+									{slide.title}
+								</h1>
+
+								{/* Description */}
+								<p className="mt-5 text-white/80 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl">
+									{slide.desc}
+								</p>
+
+								{/* Service Chips */}
+								<div className="mt-6 hidden sm:flex flex-wrap gap-3">
+									{[
+										"MCC Panels",
+										"PCC Panels",
+										"APFC Systems",
+										"AMF Panels",
+										"Bus Ducts",
+										"DG Control",
+									].map((item, i) => (
+										<span
+											key={item}
+											className="rounded-md px-4 py-2 text-xs font-semibold border backdrop-blur-sm"
+											style={{
+												background:
+													i % 2 === 0
+														? "rgba(0,86,166,0.15)"
+														: "rgba(255,122,26,0.12)",
+												borderColor:
+													i % 2 === 0
+														? "rgba(0,86,166,0.4)"
+														: "rgba(255,122,26,0.4)",
+												color: "#fff",
+											}}>
+											{item}
+										</span>
+									))}
+								</div>
+
+								{/* CTA Buttons */}
+								<div className="mt-8 flex flex-wrap gap-4">
+									<Link
+										href="/services"
+										className="inline-flex items-center justify-center rounded-md px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-105"
+										style={{
+											background: BLUE,
+											boxShadow: "0 10px 30px rgba(0,86,166,0.35)",
+										}}>
+										Explore Services
+									</Link>
+
+									<Link
+										href="/contact"
+										className="inline-flex items-center justify-center rounded-md px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-105"
+										style={{
+											background: ORANGE,
+											boxShadow: "0 10px 30px rgba(255,122,26,0.35)",
+										}}>
+										Contact Us
+									</Link>
+								</div>
+							</motion.div>
+						</div>
 					</div>
 				))}
 			</Slider>
-
-			{/* Content Overlay */}
-			<motion.div
-				initial={{ opacity: 0, y: 24 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.6, ease: "easeOut" }}
-				viewport={{ once: true }}
-				className="absolute left-4 right-4 top-[28%] sm:left-8 md:left-14 lg:left-24">
-				<div className="max-w-3xl p-3 sm:p-5 md:p-8">
-					{/* Title */}
-					<h1 className="text-white font-extrabold tracking-tight leading-tight text-2xl sm:text-3xl md:text-5xl">
-						Arihant Control Systems
-					</h1>
-
-					{/* Subtitle */}
-					<p className="mt-3 text-white/95 text-sm sm:text-base md:text-lg max-w-2xl">
-						High-Grade Electrical Panels & Contracting –{" "}
-						<span className="font-semibold">Class 1/A Certified</span> for
-						Safety, Reliability, and Peak Performance
-					</p>
-
-					{/* ✅ CTA for mobile (always under subtitle) */}
-					<div className="mt-4 flex flex-wrap gap-3 sm:hidden">
-						<Link
-							href="/services"
-							className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-semibold text-white"
-							style={{ backgroundColor: BLUE }}>
-							Explore Services
-						</Link>
-						<Link
-							href="/contact"
-							className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-semibold text-white"
-							style={{ backgroundColor: ORANGE }}>
-							Contact Us
-						</Link>
-					</div>
-
-					{/* ✅ Chips only for tablets & desktops */}
-					<div className="mt-4 hidden sm:flex flex-wrap gap-2">
-						{[
-							"MCC",
-							"PCC",
-							"APFC",
-							"AMF",
-							"DG Control",
-							"Bus Ducts",
-							"Distribution Boards",
-						].map((t, i) => (
-							<span
-								key={t}
-								className="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium"
-								style={{
-									border: `1px solid ${i % 2 === 0 ? BLUE : ORANGE}`,
-									backgroundColor: "rgba(255,255,255,0.9)",
-									color: i % 2 === 0 ? BLUE : ORANGE,
-								}}>
-								{t}
-							</span>
-						))}
-					</div>
-
-					{/* ✅ CTA for sm+ (below chips) */}
-					<div className="mt-6 hidden sm:flex flex-wrap gap-3">
-						<Link
-							href="/services"
-							className="inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold text-white"
-							style={{ backgroundColor: BLUE }}>
-							Explore Services
-						</Link>
-						<Link
-							href="/contact"
-							className="inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold text-white"
-							style={{ backgroundColor: ORANGE }}>
-							Contact Us
-						</Link>
-					</div>
-				</div>
-			</motion.div>
 		</section>
 	);
 };
