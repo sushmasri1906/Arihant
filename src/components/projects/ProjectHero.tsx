@@ -1,5 +1,4 @@
 export default function ProjectHero() {
-	const BLUE = "#0056A6";
 	const ORANGE = "#FF7A1A";
 
 	return (
