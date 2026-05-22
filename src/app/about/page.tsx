@@ -1,19 +1,18 @@
-import React from "react";
 import HeroIntro from "@/components/about/HeroIntro";
-import WhyUs from "@/components/about/WhyUs";
-import Vision from "@/components/about/Vision";
 import Stats from "@/components/about/Stats";
+import Vision from "@/components/about/Vision";
+import WhyUs from "@/components/about/WhyUs";
+import React from "react";
 
-function page() {
+const page = () => {
 	return (
-		<div>
+		<>
 			<HeroIntro />
 			<WhyUs />
-            <Vision />
-            <Stats/>
-
-		</div>
+			<Vision />
+			<Stats />
+		</>
 	);
-}
+};
 
 export default page;

@@ -7,7 +7,7 @@ export default function ProjectHero() {
 			className="relative w-full h-[60vh] sm:h-[68vh] lg:h-[78vh] bg-cover bg-center"
 			style={{
 				backgroundImage:
-					"url('https://res.cloudinary.com/dk0smdu0d/image/upload/v1756907857/bg-substation-maintenance_i2f8qr.jpg')",
+					"url('https://res.cloudinary.com/dgulr1hgd/image/upload/v1779443929/ChatGPT_Image_May_22_2026_03_28_30_PM_fufw4q.png')",
 			}}>
 			{/* Overlay */}
 			<div
@@ -29,11 +29,10 @@ export default function ProjectHero() {
 
 				{/* Subheading */}
 				<p className="mt-4 max-w-2xl text-sm text-blue-100/95 sm:text-base md:text-lg">
-					We&apos;re here to power your projects with reliable electrical solutions.
-					Reach out for inquiries, quotations, or support — our team responds
-					promptly.
+					We&apos;re here to power your projects with reliable electrical
+					solutions. Reach out for inquiries, quotations, or support — our team
+					responds promptly.
 				</p>
-
 			</div>
 		</section>
 	);

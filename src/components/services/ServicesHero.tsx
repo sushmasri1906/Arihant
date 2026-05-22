@@ -11,7 +11,7 @@ export default function ServicesHero() {
 			{/* Background image */}
 			<div className="absolute inset-0">
 				<Image
-					src="https://res.cloudinary.com/dk0smdu0d/image/upload/v1756907857/bg-substation-maintenance_i2f8qr.jpg"
+					src="https://res.cloudinary.com/dgulr1hgd/image/upload/v1779443929/ChatGPT_Image_May_22_2026_03_28_30_PM_fufw4q.png"
 					alt="Electrical infrastructure background"
 					fill
 					className="object-cover"
