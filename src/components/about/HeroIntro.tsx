@@ -106,7 +106,7 @@ export default function HeroIntro() {
 								{/* Replaced gradient with image */}
 								<div className="mt-4 h-40 overflow-hidden rounded-lg ring-1 ring-inset ring-white/10">
 									<img
-										src="https://res.cloudinary.com/dk0smdu0d/image/upload/v1756989444/engineer-monitoring-controls-stockcake_ue5jqs.jpg"
+										src="https://res.cloudinary.com/dgulr1hgd/image/upload/v1779444894/ChatGPT_Image_May_22_2026_03_31_48_PM_hywtdp.png"
 										alt="Control Panel"
 										className="h-full w-full object-cover"
 									/>
